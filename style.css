@@ -24,7 +24,7 @@ body {
 }
 
 .playerTurn {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 5px;
 }
 
@@ -43,13 +43,16 @@ body {
     align-items: center;
 }
 
-.flex-center {
+.flexCenter {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.marginTop {
-    margin-top: 40px;
+.btn {
+    margin-left: 50px;
+    padding: 5px;
+    font-size: 15px;
 }
 
 .gameContainer {

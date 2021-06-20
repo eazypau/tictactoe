@@ -1,0 +1,89 @@
+body {
+    margin: 0px;
+}
+
+.txtCenter {
+    text-align: center;
+}
+
+.header {
+    /* background-color: #B68E65; */
+    background: linear-gradient(90deg, #56342a, #d7ba89);
+    padding: 5px;
+    font-family: "Kirang Haerang";
+    font-size: 60px;
+}
+
+.subHeader {
+    display: flex;
+    position: ;
+    justify-content: space-around;
+    background-color: lightgrey;
+    font-family: "Kirang Haerang";
+    font-size: 25px;
+}
+
+.playerTurn {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.chalkBoard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 20px solid #56342a;
+    /* margin-top: 40px; */
+    /* background: url("https://img.freepik.com/free-vector/blackboard-background-wooden-frame-rubbed-out-dirty-chalkboard_115579-474.jpg?size=626&ext=jpg"); */
+    background: url("https://media.istockphoto.com/photos/chalkboard-back-to-school-theme-picture-id482968188?b=1&k=6&m=482968188&s=170667a&w=0&h=azwTcOMVQk2olLG3mgsy28DUWBjzKoavBad7ubsR4mU=");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 700px;
+    align-items: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.marginTop {
+    margin-top: 40px;
+}
+
+.gameContainer {
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+    /* column-gap: 5px;
+    row-gap: 5px; */
+    margin-bottom: 40px;
+}
+
+.box {
+    display: flex;
+    /* border: 10px solid whitesmoke; */
+    padding: 10px;
+    font-size: 80px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Kirang Haerang";
+}
+
+.borderT {
+    border-top: 10px solid whitesmoke;
+}
+
+.borderB {
+    border-bottom: 10px solid whitesmoke;
+}
+
+.borderL {
+    border-left: 10px solid whitesmoke;
+}
+
+.borderR {
+    border-right: 10px solid whitesmoke;
+}

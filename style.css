@@ -16,7 +16,7 @@ body {
 
 .subHeader {
     display: flex;
-    position: ;
+    /* position: ; */
     justify-content: space-around;
     background-color: lightgrey;
     font-family: "Kirang Haerang";

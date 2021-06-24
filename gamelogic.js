@@ -18,11 +18,23 @@ let gameStatus = true;
 // setting first player variable
 let currentPlayer = 'O'
 // add winning array
-const winningArray = []
+const winningConditions = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
 // variable to store player's score
 let scoreOfP1 = []
 let scoreOfP2 = []
-// create variable text for the annoucement
+// create a function to return a text to show player's turn
+const handlePlayerTurn = () => {
+  return "Now is Player " + currentPlayer + " turn."
+}
 
 function resetBtn() {
   gameStatus = true;
@@ -34,10 +46,14 @@ function resetBtn() {
   }
 }
 
-function handlePlay() {}
+function handlePlay() {
+
+}
 // handle the player input
 
-function winningLogic() {}
+function winningValidation() {
+
+}
 // define the winning algorithm
 // update the player score here
 
@@ -46,15 +62,15 @@ function roundsToWin() {
     alert("Player 1 wins!");
     gameStatus = false;
   } else if (scoreOfP2.length = 3) {
-    alert("Player 2 wins!");
+    alert("Player 2 wins!");  
     gameStatus = false;
   }
 }
 
-function playersTurn() {
+function playerChange() {
   // determine which player's turn
   currentPlayer = currentPlayer === 'O' ? 'X' : 'O';
-  whosTurn.innerHTML =
+  whosTurn.innerHTML = handlePlayerTurn();
 }
 
 function gameLogicSequence() {

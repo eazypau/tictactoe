@@ -1,23 +1,17 @@
 // welcome message
-alert(
-  "Welcome to Tic Tac Toe. Player 1 is using O while Player 2 is using X. The first player to win 3 times wins!"
-);
+alert("Welcome to Tic Tac Toe. Player 1 is using O while Player 2 is using X.");
 
 // grab reset button by ID
 const resetButton = document.querySelector("#reset");
 // grab the boxes by class
 const allboxes = document.querySelectorAll(".box");
-// grab player 1 score board
-let scoreP1 = document.getElementById("player1Score");
-// grab player 2 score board
-let scoreP2 = document.getElementById("player2Score");
 // grab announcement to show who's turn
-let whosTurn = document.getElementById("playersturn");
+let whosTurn = document.getElementById("playersTurn");
 // game is set to active
 let gameStatus = true;
 // setting first player variable
-let currentPlayer = 'O'
-// add winning array
+let currentPlayer = "O";
+// create winning conditions variable in array form
 const winningConditions = [
   [0, 1, 2],
   [3, 4, 5],
@@ -28,55 +22,81 @@ const winningConditions = [
   [0, 4, 8],
   [2, 4, 6],
 ];
-// variable to store player's score
-let scoreOfP1 = []
-let scoreOfP2 = []
-// create a function to return a text to show player's turn
-const handlePlayerTurn = () => {
-  return "Now is Player " + currentPlayer + " turn."
-}
+// store our current game state here, the form of empty strings
+// in an array will allow us to easily track played cell and
+// validate the game state later on
+let gameState = ["", "", "", "", "", "", "", "", ""];
 
+whosTurn.innerHTML = "Player " + currentPlayer + " turn";
+
+// create a function to return a text to show player's turn
+const handlePlayerTurn = (currentPlayer) => {
+  return (whosTurn.innerHTML = "Player " + currentPlayer + " turn.");
+};
+// handles the reset button
 function resetBtn() {
   gameStatus = true;
-  currentPlayer = 'o';
-  scoreP1.textContent = 0;
-  scoreP2.textContent = 0;
+  currentPlayer = "O";
+  gameState = ["", "", "", "", "", "", "", "", ""];
+  whosTurn.innerHTML = "Player " + currentPlayer + " turn";
   for (let i = 0; i < allboxes.length; i++) {
-    allboxes[i].textContent = '';
+    allboxes[i].textContent = "";
   }
 }
-
-function handlePlay() {
-
+// handles the player input
+function handleBoxClicked(clickedBox, boxIndex) {
+  gameState[boxIndex] = currentPlayer;
+  clickedBox.innerHTML = currentPlayer;
 }
-// handle the player input
-
+// validate the winning condition
 function winningValidation() {
-
-}
-// define the winning algorithm
-// update the player score here
-
-function roundsToWin() {
-  if (scoreOfP1.length = 3) {
-    alert("Player 1 wins!");
-    gameStatus = false;
-  } else if (scoreOfP2.length = 3) {
-    alert("Player 2 wins!");  
-    gameStatus = false;
+  let roundWon = false;
+  for (let i = 0; i <= 7; i++) {
+    const winningCondition = winningConditions[i];
+    let a = gameState[winningCondition[0]];
+    let b = gameState[winningCondition[1]];
+    let c = gameState[winningCondition[2]];
+    if (a === "" || b === "" || c === "") {
+      continue;
+    }
+    if (a === b && b === c) {
+      roundWon = true;
+      break;
+    }
   }
+  if (roundWon) {
+    gameStatus = false;
+    return alert("Player " + currentPlayer + " won. Please click the reset button to play again~");
+  }
+  let roundDraw = !gameState.includes("");
+  if (roundDraw) {
+    gameStatus = false;
+    return alert("Oh no, is a draw! Please click the reset button to play again~");
+  }
+  playerChange();
 }
 
 function playerChange() {
   // determine which player's turn
-  currentPlayer = currentPlayer === 'O' ? 'X' : 'O';
-  whosTurn.innerHTML = handlePlayerTurn();
+  currentPlayer = currentPlayer === "O" ? "X" : "O";
+  whosTurn.innerHTML = handlePlayerTurn(currentPlayer);
 }
 
-function gameLogicSequence() {
+function gameLogicSequence(clickedBoxEvent) {
   // define the logic sequence
+  const clickedBox = clickedBoxEvent.target;
 
+  const clickedBoxIndex = parseInt(clickedBox.getAttribute("data-cell-index"));
+
+  if (gameState[clickedBoxIndex] !== "" || !gameStatus) {
+    return;
+  }
+
+  handleBoxClicked(clickedBox, clickedBoxIndex);
+  winningValidation();
 }
 
-resetButton.addEventListener("click", resetBtn)
-
+resetButton.addEventListener("click", resetBtn);
+allboxes.forEach((box) => {
+  box.addEventListener("click", gameLogicSequence);
+});

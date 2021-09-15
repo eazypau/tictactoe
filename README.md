@@ -8,9 +8,9 @@
 ![alt text](./assets/tictactoe.gif "tic-tac-toe-preview")
 
 ## Technologies
-..* HTML
-..* CSS
-..* JavaScript
+* HTML
+* CSS
+* JavaScript
 
 ## Resources/References
-..* https://dev.to/bornasepic/pure-and-simple-tic-tac-toe-with-javascript-4pgn
+* https://dev.to/bornasepic/pure-and-simple-tic-tac-toe-with-javascript-4pgn

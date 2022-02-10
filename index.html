@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"
-      rel="stylesheet"
-    />
-    <title>A Game of TicTacToe</title>
-  </head>
-  <body>
-    <div class="header">
-      <h1 class="txtCenter">Tic Tac Toe</h1>
-    </div>
-    <div class="subHeader">
-      <div class="flexCenter">
-        <p class="playerTurn">Now is <span id="playersTurn"></span></p>
-        <button id="reset" class="btn">Reset</button>
-      </div>
-    </div>
-    <div class="chalkBoard">
-      <div class="gameContainer">
-        <div data-cell-index="0" class="box borderR borderB"></div>
-        <div data-cell-index="1" class="box borderB"></div>
-        <div data-cell-index="2" class="box borderL borderB"></div>
-        <div data-cell-index="3" class="box borderR"></div>
-        <div data-cell-index="4" class="box"></div>
-        <div data-cell-index="5" class="box borderL"></div>
-        <div data-cell-index="6" class="box borderT borderR"></div>
-        <div data-cell-index="7" class="box borderT"></div>
-        <div data-cell-index="8" class="box borderT borderL"></div>
-      </div>
-    </div>
-  </body>
-  <script src="gamelogic.js"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" rel="stylesheet" />
+		<title>A Game of TicTacToe</title>
+	</head>
+	<body>
+		<!-- <div class="header"> -->
+		<div class="container">
+			<div class="card">
+			  <h1 class="header">Tic Tac Toe</h1>
+  			<!-- </div> -->
+  			<div class="subHeader">
+  				<div class="flexCenter">
+  					<p class="playerTurn">Now is <span id="playersTurn"></span></p>
+  					<button id="reset" class="btn">Reset</button>
+  				</div>
+  			</div>
+  			<div class="chalkBoard">
+  				<div class="gameContainer">
+  					<div data-cell-index="0" class="box borderR borderB"></div>
+  					<div data-cell-index="1" class="box borderB"></div>
+  					<div data-cell-index="2" class="box borderL borderB"></div>
+  					<div data-cell-index="3" class="box borderR"></div>
+  					<div data-cell-index="4" class="box"></div>
+  					<div data-cell-index="5" class="box borderL"></div>
+  					<div data-cell-index="6" class="box borderT borderR"></div>
+  					<div data-cell-index="7" class="box borderT"></div>
+  					<div data-cell-index="8" class="box borderT borderL"></div>
+  				</div>
+  			</div>
+			</div>
+		</div>
+	</body>
+	<script src="gamelogic.js"></script>
 </html>

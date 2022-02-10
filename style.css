@@ -1,92 +1,128 @@
 body {
-    margin: 0px;
+	margin: 0px;
+	height: 100vh;
 }
 
-.txtCenter {
-    text-align: center;
+.container {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: inherit;
+}
+
+.card {
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 .header {
-    /* background-color: #B68E65; */
-    background: linear-gradient(90deg, #56342a, #d7ba89);
-    padding: 5px;
-    font-family: "Kirang Haerang";
-    font-size: 60px;
+	background: linear-gradient(90deg, #56342a, #d7ba89);
+	font-family: "Kirang Haerang";
+	font-size: 80px;
+	text-align: center;
+	margin: 0px;
+	padding: 10px 0;
+	flex-grow: 1;
 }
 
 .subHeader {
-    display: flex;
-    /* position: ; */
-    justify-content: space-around;
-    background-color: lightgrey;
-    font-family: "Kirang Haerang";
-    font-size: 25px;
+	display: flex;
+	justify-content: space-around;
+	background-color: lightgrey;
+	font-family: "Kirang Haerang";
+	font-size: 25px;
 }
 
 .playerTurn {
-    /* border: 1px solid black; */
-    padding: 5px;
+	padding: 5px;
 }
 
 .chalkBoard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 20px solid #56342a;
-    /* margin-top: 40px; */
-    /* background: url("https://img.freepik.com/free-vector/blackboard-background-wooden-frame-rubbed-out-dirty-chalkboard_115579-474.jpg?size=626&ext=jpg"); */
-    background: url("https://media.istockphoto.com/photos/chalkboard-back-to-school-theme-picture-id482968188?b=1&k=6&m=482968188&s=170667a&w=0&h=azwTcOMVQk2olLG3mgsy28DUWBjzKoavBad7ubsR4mU=");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 700px;
-    align-items: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 20px solid #56342a;
+	/* margin-top: 40px; */
+	/* background: url("https://img.freepik.com/free-vector/blackboard-background-wooden-frame-rubbed-out-dirty-chalkboard_115579-474.jpg?size=626&ext=jpg"); */
+	background: url("https://media.istockphoto.com/photos/chalkboard-back-to-school-theme-picture-id482968188?b=1&k=6&m=482968188&s=170667a&w=0&h=azwTcOMVQk2olLG3mgsy28DUWBjzKoavBad7ubsR4mU=");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 400px;
 }
 
 .flexCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .btn {
-    margin-left: 50px;
-    padding: 5px;
-    font-size: 15px;
+	margin-left: 50px;
+	padding: 5px;
+	font-size: 15px;
 }
 
 .gameContainer {
-    display: grid;
-    grid-template-columns: 150px 150px 150px;
-    grid-template-rows: 150px 150px 150px;
-    /* column-gap: 5px;
-    row-gap: 5px; */
-    margin-bottom: 40px;
+	display: grid;
+	grid-template-columns: 100px 100px 100px;
+	grid-template-rows: 100px 100px 100px;
 }
 
 .box {
-    display: flex;
-    /* border: 10px solid whitesmoke; */
-    padding: 10px;
-    font-size: 80px;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-family: "Kirang Haerang";
+	display: flex;
+	font-size: 80px;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-family: "Kirang Haerang";
 }
 
 .borderT {
-    border-top: 10px solid whitesmoke;
+	border-top: 10px solid whitesmoke;
 }
 
 .borderB {
-    border-bottom: 10px solid whitesmoke;
+	border-bottom: 10px solid whitesmoke;
 }
 
 .borderL {
-    border-left: 10px solid whitesmoke;
+	border-left: 10px solid whitesmoke;
 }
 
 .borderR {
-    border-right: 10px solid whitesmoke;
+	border-right: 10px solid whitesmoke;
+}
+
+@media (max-width: 425px) {
+	.container {
+		width: 95%;
+	}
+	.header {
+		font-size: 50px;
+	}
+	.playerTurn {
+		margin: 10px;
+	}
+	.btn {
+		margin-left: 5px;
+		margin-right: 7px;
+	}
+	.chalkBoard {
+		height: 300px;
+	}
+	.gameContainer {
+		grid-template-columns: 75px 75px 75px;
+		grid-template-rows: 75px 75px 75px;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		width: 80%;
+	}
 }
